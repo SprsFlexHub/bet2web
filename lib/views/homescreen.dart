@@ -17,18 +17,22 @@ class _MobileScreenState extends State<MobileScreen> {
       backgroundColor: const Color(0xff1E2434),
       body: SingleChildScrollView(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(
               height: 20,
             ),
-            Container(
+            SizedBox(
               height: 140,
               width: MediaQuery.of(context).size.width,
               child: Constant.getLogo('mobile'),
             ),
             mainContent('mobile'),
+            const SizedBox(
+              height: 20,
+            ),
+            Constant.setRightContent('mobile')
           ],
         ),
       ),
@@ -102,12 +106,12 @@ class _MobileScreenState extends State<MobileScreen> {
           ),
           Padding(
             padding: const EdgeInsets.only(
-              left: 40.0,
+              left: 20.0,
             ),
             child: Image.asset(
               'assets/images/rating.png',
-              height: 50,
-              width: 160,
+              height: 80,
+              width: 220,
               fit: BoxFit.contain,
             ),
           ),

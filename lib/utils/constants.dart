@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Constant {
   static launchUrl(url) async {
@@ -52,13 +53,36 @@ class Constant {
 
   static setRightContent(param) {
     if (param == 'mobile') {
-      return Image.asset(
-        'assets/images/setTxt.png',
-        height: 150,
-        width: 150,
+      return SizedBox(
+        height: 460,
+        width: Get.width * .98,
+        child: Stack(
+          children: <Widget>[
+            Positioned(
+              top: 21,
+              left: Get.width * .32,
+              child: SizedBox(
+                width: Get.width * .45,
+                height: 460,
+                child: Image.asset('assets/images/Rectangle21.png',
+                    height: 460, width: Get.width * .45, fit: BoxFit.fill),
+              ),
+            ),
+            Positioned(
+              top: 0,
+              right: 0,
+              child: SizedBox(
+                width: Get.width * .75,
+                height: 460,
+                child: Image.asset('assets/images/Imageright.png',
+                    height: 460, width: Get.width * .75, fit: BoxFit.fill),
+              ),
+            ),
+          ],
+        ),
       );
     } else if (param == 'desktop') {
-      return Container(
+      return SizedBox(
         height: 749,
         width: 775,
         child: Stack(
